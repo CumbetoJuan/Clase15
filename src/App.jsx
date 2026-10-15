@@ -19,9 +19,12 @@ import NoEncontrada from './paginas/NoEncontrada.jsx' // 🚧 importado, pero to
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Inicio />} />
-      <Route path="/inscripcion" element={<Inscripcion />} />
-      <Route path="/bienvenida" element={<Bienvenida />} />
+      <Route element={<Layout />}>
+        <Route index element={<Inicio />} />
+        <Route path="inscripcion" element={<Inscripcion />} />
+        <Route path="bienvenida" element={<Bienvenida />} />
+        <Route path="*" element={<NoEncontrada />} />
+      </Route>
     </Routes>
   )
 }

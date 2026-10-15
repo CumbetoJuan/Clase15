@@ -1,4 +1,5 @@
-import { Link } from 'react-router'
+import { Link, NavLink, Outlet } from 'react-router'
+
 
 // 🚧 PASO 2 · El layout: lo que se repite en todas las páginas
 //
@@ -14,22 +15,34 @@ function Layout() {
       <header className="cabecera">
         <div className="cabecera-interior">
           <Link to="/" className="logo">
-            <img src="/pokeball.svg" alt="" width="28" height="28" />
+            <img
+              src="/pokeball.svg"
+              alt=""
+              width="28"
+              height="28"
+            />
             Liga Pokémon
           </Link>
 
           <nav className="nav">
-            <a href="/">Inicio</a>
-            <a href="/inscripcion">Inscripción</a>
+            <NavLink to="/" end>
+              Inicio
+            </NavLink>
+
+            <NavLink to="/inscripcion">
+              Inscripción
+            </NavLink>
           </nav>
         </div>
       </header>
 
       <main className="contenido">
-        {/* 🚧 Acá tiene que aparecer la página de la ruta hija */}
+        <Outlet />   {/* 🚧 Acá tiene que aparecer la página de la ruta hija */}
       </main>
 
-      <footer className="pie">Ejercicio Sprint 5 · React Router + react-hook-form + yup</footer>
+      <footer className="pie">
+        Ejercicio Sprint 5 · React Router + react-hook-form + yup
+      </footer>
     </>
   )
 }

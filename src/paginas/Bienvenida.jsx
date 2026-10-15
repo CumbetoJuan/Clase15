@@ -15,9 +15,9 @@ function Bienvenida() {
 
   // Si alguien entra a /bienvenida sin datos, lo mandamos al formulario.
   // "replace" reemplaza la entrada del historial: con "Atrás" no vuelve acá.
-  if (!nombre || !inicial) {
-    return <Navigate to="/inscripcion" replace />
-  }
+if (!nombre || !inicial) {
+  return <Navigate to="/inscripcion" replace />
+}
 
   return (
     <>
