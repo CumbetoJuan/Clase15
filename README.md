@@ -64,3 +64,8 @@ Tu misión: completar el código en **cuatro archivos**. Todo lo demás (página
 2. ¿Por qué el carnet va en el query string y no en un `useState`?
 3. Escribí en el formulario con el componente abierto en React DevTools (Profiler o "Highlight updates"): ¿se vuelve a renderizar con cada tecla? ¿Por qué?
 4. Si el usuario borra el `disabled` del botón desde DevTools, ¿se puede mandar el formulario con datos inválidos?
+
+1) Tenemos que la ruta layout definte una estructura común de las páginas por ej encabezmao y pie, mientras que index indica que página vamos a mostrar por defecto 
+2) Utilizamos query string para conservar los datos del tipo carnet al recargar la página y se comparten mediante la URL "http://localhost:5173/bienvenida?nombre=aaa&inicial=bulbasaur&carnet=11" En cambio con useState, al hacer F5 en la página limpia ese estado y reinica a su valor inicial, lo mismo pasa si se cierra la pestaña
+3) React hook form evita renderizaciones innecesarias con cada tecla ya que utiliza campos no controlados, pero puede volver a renderizar cuando cambian los errores o el estado de la inscripcion
+4) Al quitar disabled no evitamos la validación de yup, por lo que handlesubmit impide ejecutar onSubmit con datos invalidos, pero en el backend debemos validar esos datos por seguridad.
